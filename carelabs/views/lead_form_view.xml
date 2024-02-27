@@ -13,14 +13,25 @@
                                 <field name="x_contact_medium" placeholder="Email/Phone/Others"/> 
                                 <field name="service" widget="many2many_tags" options="{'color_field': 'color', 'no_create': True ,}" placeholder="Services"/>
                                 <field name="lead_source"/>
+                               
                             </xpath>
+
+                            <xpath expr="//field[@name='function']" position="after">
+
+                                <field name="lead_issue"/>
+                                <field name="proposal_date" placeholder="Select date"/>
+                            
+                            </xpath>
+
+
 
                             <xpath expr="//field[@name='phone_blacklisted']" position="after">
 
                                 <field name="service" widget="many2many_tags"
-                                options="{'color_field': 'color', 'no_create': True , 'clickable': '1'}" placeholder="Services"
-                                 visible ="type == 'opportunity' or active"/>
-
+                                                options="{'color_field': 'color', 'no_create': True , 'clickable': '1'}" placeholder="Services"
+                                                visible ="type == 'opportunity' or active"/>
+                                <field name="lead_issue"/>
+                                <field name="proposal_date" placeholder="Select date"/>
                             </xpath>
         </field>
     </record>
