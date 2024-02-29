@@ -9,4 +9,4 @@ class LeadStage(models.Model):
     _order = "sequence"
 
     name = fields.Char('Stage Name', required=True, translate=True)
-    sequence = fields.Integer('Sequence', default=1, help="Used to order stages. Lower is better.")
+    sequence = fields.Integer('Sequence', help="Used to order stages. Lower is better.")
