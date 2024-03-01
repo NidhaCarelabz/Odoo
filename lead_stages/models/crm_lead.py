@@ -5,12 +5,8 @@ from odoo import fields, models, api
 class Lead(models.Model):
     _inherit = 'crm.lead'
 
-    @api.returns('self')
-    def _default_lead_stage(self):
-        return self.env['crm.lead.stage'].search([], limit=1)
-
     lead_stage_id = fields.Many2one(
-        'crm.lead.stage', string='Stage', index=True, tracking=True,readonly=False, store=True, group_expand='_default_lead_stage', default=_default_lead_stage,)
+        'crm.lead.stage', string='Stage', index=True, tracking=True, readonly=False, group_expand='_default_lead_stage')
 
     @api.model
     def _default_lead_stage(self, stages, domain, order):
